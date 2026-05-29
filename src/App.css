@@ -195,6 +195,67 @@
   line-height: 1;
 }
 
+.carousel {
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 430px;
+  display: block;
+  object-fit: cover;
+  opacity: 0.82;
+}
+
+.carousel-info {
+  max-width: 520px;
+  padding: 28px;
+  color: white;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.carousel-info p {
+  margin: 0 0 6px;
+  color: #f2c98b;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.carousel-info h3 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.carousel-control {
+  width: 48px;
+  height: 48px;
+}
+
+.carousel-dots {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dot-active {
+  background: white;
+}
+
 .shop-layout {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
@@ -370,6 +431,41 @@
 
 .benefits-grid strong {
   font-size: 1.15rem;
+}
+
+.favorite-section {
+  padding-bottom: 28px;
+}
+
+.favorite-color {
+  max-width: 560px;
+  padding: 26px;
+  border-radius: 8px;
+  background: #fffaf2;
+}
+
+.favorite-color p {
+  margin-top: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.texto-azul {
+  color: #1565c0;
+}
+
+.texto-vermelho {
+  color: #c62828;
+}
+
+.table-section {
+  padding-top: 28px;
+}
+
+.product-table {
+  overflow: hidden;
+  border-radius: 8px;
+  background: white;
 }
 
 .cart-layout {
@@ -581,6 +677,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .carousel,
+  .carousel-image {
+    min-height: 360px;
+    height: 360px;
+  }
+
   .book-modal > img {
     min-height: 280px;
     max-height: 360px;
@@ -596,6 +698,7 @@
 
   .menu-links {
     width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 

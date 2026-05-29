@@ -1,7 +1,10 @@
 import * as React from 'react'
 import { useMemo, useState } from 'react'
 import './App.css'
+import Carroussel from './components/Carroussel'
+import FavoriteColor from './components/FavoriteColor'
 import Menu from './components/Menu'
+import Tabela from './components/Tabela'
 import produtos from './data/produtos.json'
 import type { ItemCarrinho, Produto } from './types'
 
@@ -110,6 +113,14 @@ function App() {
       </header>
 
       <main>
+        <section id="destaques" className="content-section highlights-section">
+          <div className="section-heading">
+            <p className="section-kicker">App Produtos React</p>
+            <h2>Destaques da livraria</h2>
+          </div>
+          <Carroussel produtos={livros} />
+        </section>
+
         <section id="catalogo" className="content-section catalog-section">
           <div className="section-heading">
             <p className="section-kicker">Catalogo</p>
@@ -195,6 +206,22 @@ function App() {
               <strong>Classicos, tecnologia e ficcao</strong>
             </div>
           </div>
+        </section>
+
+        <section id="favorito" className="content-section favorite-section">
+          <div className="section-heading">
+            <p className="section-kicker">useState</p>
+            <h2>FavoriteColor</h2>
+          </div>
+          <FavoriteColor />
+        </section>
+
+        <section id="tabela" className="content-section table-section">
+          <div className="section-heading">
+            <p className="section-kicker">Arquivo JSON local</p>
+            <h2>Tabela de produtos</h2>
+          </div>
+          <Tabela produtos={livros} />
         </section>
 
         <section id="carrinho" className="content-section cart-section">

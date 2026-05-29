@@ -11,7 +11,9 @@ function Menu({ totalItens }: MenuProps) {
         Livraria Aurora
       </a>
       <div className="menu-links">
+        <a href="#destaques">Destaques</a>
         <a href="#catalogo">Catalogo</a>
+        <a href="#tabela">Tabela</a>
         <a href="#beneficios">Beneficios</a>
         <a href="#carrinho" className="cart-link">
           Carrinho
