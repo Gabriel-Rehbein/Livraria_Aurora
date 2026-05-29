@@ -6,7 +6,14 @@
     "autor": "Matt Haig",
     "preco": 42.9,
     "estoque": 18,
-    "imagem": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80"
+    "imagem": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80",
+    "descricao": "Entre a vida e a morte existe uma biblioteca infinita. Nora Seed encontra prateleiras cheias de possibilidades e precisa descobrir qual vida realmente vale a pena viver.",
+    "paginas": 308,
+    "editora": "Bertrand Brasil",
+    "idioma": "Portugues",
+    "avaliacao": 4.8,
+    "tags": ["Drama", "Escolhas", "Best-seller"],
+    "destaque": "Mais vendido"
   },
   {
     "id": 2,
@@ -15,7 +22,14 @@
     "autor": "Robert C. Martin",
     "preco": 89.9,
     "estoque": 9,
-    "imagem": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+    "imagem": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+    "descricao": "Um guia pratico para escrever codigo legivel, testavel e facil de manter. Essencial para quem quer programar com mais criterio profissional.",
+    "paginas": 464,
+    "editora": "Alta Books",
+    "idioma": "Portugues",
+    "avaliacao": 4.9,
+    "tags": ["Programacao", "Boas praticas", "Carreira"],
+    "destaque": "Para devs"
   },
   {
     "id": 3,
@@ -24,7 +38,14 @@
     "autor": "Machado de Assis",
     "preco": 29.9,
     "estoque": 24,
-    "imagem": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80"
+    "imagem": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80",
+    "descricao": "Bentinho revisita sua juventude, sua paixao por Capitu e uma das maiores duvidas da literatura brasileira. Um classico elegante, ironico e inesgotavel.",
+    "paginas": 256,
+    "editora": "Principis",
+    "idioma": "Portugues",
+    "avaliacao": 4.7,
+    "tags": ["Classico", "Brasil", "Romance"],
+    "destaque": "Classico nacional"
   },
   {
     "id": 4,
@@ -33,6 +54,77 @@
     "autor": "Antoine de Saint-Exupery",
     "preco": 35.5,
     "estoque": 15,
-    "imagem": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=80"
+    "imagem": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=80",
+    "descricao": "Uma fabula delicada sobre amizade, amor e responsabilidade. Uma leitura curta, mas cheia de frases que acompanham leitores por muito tempo.",
+    "paginas": 96,
+    "editora": "HarperCollins",
+    "idioma": "Portugues",
+    "avaliacao": 4.9,
+    "tags": ["Fabula", "Infantojuvenil", "Presente"],
+    "destaque": "Presente perfeito"
+  },
+  {
+    "id": 5,
+    "nome": "Torto Arado",
+    "categoria": "Literatura brasileira",
+    "autor": "Itamar Vieira Junior",
+    "preco": 49.9,
+    "estoque": 12,
+    "imagem": "https://images.unsplash.com/photo-1511108690759-009324a90311?auto=format&fit=crop&w=1200&q=80",
+    "descricao": "Duas irmas crescem no sertao baiano em uma historia de terra, memoria, trabalho e resistencia. Um romance brasileiro forte e profundamente humano.",
+    "paginas": 264,
+    "editora": "Todavia",
+    "idioma": "Portugues",
+    "avaliacao": 4.8,
+    "tags": ["Premiado", "Brasil", "Contemporaneo"],
+    "destaque": "Premiado"
+  },
+  {
+    "id": 6,
+    "nome": "Duna",
+    "categoria": "Ficcao cientifica",
+    "autor": "Frank Herbert",
+    "preco": 74.9,
+    "estoque": 7,
+    "imagem": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80",
+    "descricao": "No planeta Arrakis, politica, ecologia, religiao e poder se misturam em uma das maiores sagas da ficcao cientifica.",
+    "paginas": 680,
+    "editora": "Aleph",
+    "idioma": "Portugues",
+    "avaliacao": 4.8,
+    "tags": ["Sci-fi", "Saga", "Aventura"],
+    "destaque": "Universo epico"
+  },
+  {
+    "id": 7,
+    "nome": "Mindset",
+    "categoria": "Desenvolvimento pessoal",
+    "autor": "Carol S. Dweck",
+    "preco": 44.9,
+    "estoque": 20,
+    "imagem": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80",
+    "descricao": "A psicologa Carol Dweck mostra como a forma de encarar aprendizado, erro e esforco influencia carreira, estudos e relacionamentos.",
+    "paginas": 312,
+    "editora": "Objetiva",
+    "idioma": "Portugues",
+    "avaliacao": 4.6,
+    "tags": ["Produtividade", "Aprendizado", "Psicologia"],
+    "destaque": "Para evoluir"
+  },
+  {
+    "id": 8,
+    "nome": "O Hobbit",
+    "categoria": "Fantasia",
+    "autor": "J. R. R. Tolkien",
+    "preco": 54.9,
+    "estoque": 14,
+    "imagem": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=1200&q=80",
+    "descricao": "Bilbo Bolseiro deixa o conforto do Condado para uma aventura com anoes, mapas antigos, enigmas e um tesouro guardado por um dragao.",
+    "paginas": 336,
+    "editora": "HarperCollins",
+    "idioma": "Portugues",
+    "avaliacao": 4.9,
+    "tags": ["Fantasia", "Aventura", "Classico"],
+    "destaque": "Aventura"
   }
 ]
