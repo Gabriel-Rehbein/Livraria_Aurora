@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nome": "A Biblioteca da Meia-Noite",
+    "categoria": "Ficcao",
+    "autor": "Matt Haig",
+    "preco": 42.9,
+    "estoque": 18,
+    "imagem": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": 2,
+    "nome": "Clean Code",
+    "categoria": "Tecnologia",
+    "autor": "Robert C. Martin",
+    "preco": 89.9,
+    "estoque": 9,
+    "imagem": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": 3,
+    "nome": "Dom Casmurro",
+    "categoria": "Literatura brasileira",
+    "autor": "Machado de Assis",
+    "preco": 29.9,
+    "estoque": 24,
+    "imagem": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": 4,
+    "nome": "O Pequeno Principe",
+    "categoria": "Classico",
+    "autor": "Antoine de Saint-Exupery",
+    "preco": 35.5,
+    "estoque": 15,
+    "imagem": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=80"
+  }
+]
