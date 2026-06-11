@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { Produto } from '../types'
 
 type CarrousselProps = {
@@ -8,7 +8,17 @@ type CarrousselProps = {
 
 function Carroussel({ produtos }: CarrousselProps) {
   const [indiceAtual, setIndiceAtual] = useState(0)
-  const produto = produtos[indiceAtual]
+
+  useEffect(() => {
+    if (!produtos || produtos.length === 0) {
+      setIndiceAtual(0)
+      return
+    }
+
+    setIndiceAtual((i) => Math.min(i, produtos.length - 1))
+  }, [produtos])
+
+  const produto = produtos && produtos.length > 0 ? produtos[indiceAtual] : undefined
 
   const voltar = () => {
     setIndiceAtual((indice) => (indice === 0 ? produtos.length - 1 : indice - 1))
@@ -20,12 +30,18 @@ function Carroussel({ produtos }: CarrousselProps) {
 
   return (
     <div className="carousel w3-display-container w3-card">
-      <img src={produto.imagem} alt={produto.nome} className="carousel-image" />
-      <div className="carousel-info w3-display-bottomleft">
-        <p>{produto.categoria}</p>
-        <h3>{produto.nome}</h3>
-        <span>{produto.autor}</span>
-      </div>
+      {produto ? (
+        <img src={produto.imagem} alt={produto.nome} className="carousel-image" />
+      ) : (
+        <div className="carousel-empty">Nenhum produto disponível</div>
+      )}
+      {produto && (
+        <div className="carousel-info w3-display-bottomleft">
+          <p>{produto.categoria}</p>
+          <h3>{produto.nome}</h3>
+          <span>{produto.autor}</span>
+        </div>
+      )}
       <button
         className="w3-button w3-black w3-display-left carousel-control"
         type="button"

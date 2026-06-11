@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { NavLink } from 'react-router-dom'
 
 type MenuProps = {
   totalItens: number
@@ -7,18 +8,16 @@ type MenuProps = {
 function Menu({ totalItens }: MenuProps) {
   return (
     <nav className="top-menu">
-      <a href="#inicio" className="brand-link">
+      <NavLink to="/livros" className="brand-link">
         Livraria Aurora
-      </a>
+      </NavLink>
       <div className="menu-links">
-        <a href="#destaques">Destaques</a>
-        <a href="#catalogo">Catalogo</a>
-        <a href="#tabela">Tabela</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#carrinho" className="cart-link">
+        <NavLink to="/livros">Livros</NavLink>
+        <NavLink to="/novo">Novo Livro</NavLink>
+        <NavLink to="/carrinho" className="cart-link">
           Carrinho
           <span>{totalItens}</span>
-        </a>
+        </NavLink>
       </div>
     </nav>
   )

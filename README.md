@@ -87,3 +87,22 @@ npm.cmd run preview
 Aí abre o link que aparecer, normalmente:
 
 http://localhost:4173/
+
+---
+
+Instruções rápidas para este projeto (adicionado):
+
+```bash
+npm install
+npm run server   # inicia json-server em http://localhost:3001
+npm run dev      # inicia Vite (http://localhost:5173)
+# ou rode ambos simultaneamente
+npm run start:all
+```
+
+Rotas usadas:
+
+- `/livros` — listagem
+- `/novo` — formulário para criar novo livro
+
+Se ocorrerem erros de tipagem no Windows relacionados a `@types/react`, rode `npm install` e reinicie o editor.

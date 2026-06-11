@@ -5,10 +5,12 @@ import Carroussel from './components/Carroussel'
 import FavoriteColor from './components/FavoriteColor'
 import Menu from './components/Menu'
 import Tabela from './components/Tabela'
-import produtos from './data/produtos.json'
+import FormProdutos from './components/FormProdutos'
+import { getProdutos } from './services/api'
 import type { ItemCarrinho, Produto } from './types'
+import { useEffect } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
-const livros = produtos as Produto[]
 
 const formatarPreco = (valor: number) =>
   valor.toLocaleString('pt-BR', {
@@ -17,6 +19,31 @@ const formatarPreco = (valor: number) =>
   })
 
 function App() {
+  const [livros, setLivros] = useState<Produto[]>([])
+
+  const fetchProdutos = async () => {
+    try {
+      const resp = await getProdutos()
+      setLivros(resp.data)
+    } catch (e) {
+      // fallback: try fetch local file
+      try {
+        const local = await import('./data/produtos.json')
+        setLivros(local.default as Produto[])
+      } catch (_) {
+        setLivros([])
+      }
+    }
+  }
+
+  useEffect(() => {
+    void fetchProdutos()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const handleCreated = (p: Produto) => {
+    setLivros((s) => [...s, p])
+  }
   const [busca, setBusca] = useState('')
   const [categoriaAtiva, setCategoriaAtiva] = useState('Todos')
   const [livroSelecionado, setLivroSelecionado] = useState<Produto | null>(null)
@@ -24,7 +51,7 @@ function App() {
 
   const categorias = useMemo(
     () => ['Todos', ...Array.from(new Set(livros.map((livro) => livro.categoria)))],
-    [],
+    [livros],
   )
 
   const livrosFiltrados = useMemo(() => {
@@ -40,7 +67,7 @@ function App() {
 
       return combinaCategoria && combinaBusca
     })
-  }, [busca, categoriaAtiva])
+  }, [busca, categoriaAtiva, livros])
 
   const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0)
   const subtotal = carrinho.reduce(
@@ -84,10 +111,8 @@ function App() {
     )
   }
 
-  return (
-    <div className="app-shell">
-      <Menu totalItens={totalItens} />
-
+  const MainContent = () => (
+    <>
       <header id="inicio" className="hero-section">
         <div className="hero-copy">
           <p className="section-kicker">Livros novos, classicos e essenciais</p>
@@ -106,9 +131,15 @@ function App() {
           </div>
         </div>
         <div className="hero-book">
-          <span>{livros[0].destaque}</span>
-          <strong>{livros[0].nome}</strong>
-          <small>{livros[0].autor}</small>
+          {livros[0] ? (
+            <>
+              <span>{livros[0].destaque}</span>
+              <strong>{livros[0].nome}</strong>
+              <small>{livros[0].autor}</small>
+            </>
+          ) : (
+            <span>Carregando...</span>
+          )}
         </div>
       </header>
 
@@ -346,6 +377,19 @@ function App() {
           </article>
         </div>
       )}
+    </>
+  )
+
+  return (
+    <div className="app-shell">
+      <Menu totalItens={totalItens} />
+      <main>
+        <Routes>
+          <Route path="/livros" element={<MainContent />} />
+          <Route path="/novo" element={<FormProdutos onCreated={handleCreated} />} />
+          <Route path="/" element={<Navigate to="/livros" replace />} />
+        </Routes>
+      </main>
     </div>
   )
 }
